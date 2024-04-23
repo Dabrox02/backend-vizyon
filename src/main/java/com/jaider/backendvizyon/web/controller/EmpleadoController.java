@@ -12,8 +12,11 @@ import com.jaider.backendvizyon.domain.exception.NotInformationFoundException;
 import com.jaider.backendvizyon.domain.service.EmpleadoService;
 import com.jaider.backendvizyon.persistence.dto.EmpleadoDTO;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 @RestController
 @RequestMapping(path = "/empleado")
+@SecurityRequirement(name = "bearerAuth")
 public class EmpleadoController {
 
     @Autowired

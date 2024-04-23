@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jaider.backendvizyon.domain.service.VentaService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController()
 @RequestMapping(path = "/venta")
+@SecurityRequirement(name = "bearerAuth")
 public class VentaController {
 
     @Autowired
