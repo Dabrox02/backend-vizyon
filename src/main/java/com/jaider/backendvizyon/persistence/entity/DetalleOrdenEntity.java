@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "detalle_orden")
-public class DetalleOrden {
+public class DetalleOrdenEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

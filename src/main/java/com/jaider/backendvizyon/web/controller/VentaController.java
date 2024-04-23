@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jaider.backendvizyon.domain.service.VentaService;
@@ -12,7 +13,6 @@ import com.jaider.backendvizyon.domain.service.VentaService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController()
 @RequestMapping(path = "/venta")
@@ -22,8 +22,8 @@ public class VentaController {
     @Autowired
     private VentaService ventaService;
 
-    @GetMapping("/month/{numberMonth}/{numberYear}")
-    public ResponseEntity<?> findAllVentasByMonth(@PathVariable String numberMonth, @PathVariable String numberYear) {
+    @GetMapping("/all/month_year")
+    public ResponseEntity<?> findAllVentasByMonth(@RequestParam String numberMonth, @RequestParam String numberYear) {
         try {
             Integer month = Integer.parseInt(numberMonth);
             Integer year = Integer.parseInt(numberYear);
@@ -34,7 +34,7 @@ public class VentaController {
         }
     }
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public ResponseEntity<?> findAll() {
         try {
             List<?> response = ventaService.findAll();

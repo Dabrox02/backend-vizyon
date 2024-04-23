@@ -14,15 +14,15 @@ public class ColorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long idTalla;
+    private Long idColor;
     private String descripcion;
 
-    public Long getIdTalla() {
-        return this.idTalla;
+    public Long getIdColor() {
+        return this.idColor;
     }
 
-    public void setIdTalla(Long idTalla) {
-        this.idTalla = idTalla;
+    public void setIdColor(Long idColor) {
+        this.idColor = idColor;
     }
 
     public String getDescripcion() {
@@ -36,7 +36,7 @@ public class ColorEntity {
     @Override
     public String toString() {
         return "{" +
-                " idTalla='" + getIdTalla() + "'" +
+                " idTalla='" + getIdColor() + "'" +
                 ", descripcion='" + getDescripcion() + "'" +
                 "}";
     }
